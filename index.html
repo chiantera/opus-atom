@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Interactive 3D Atomic Structure Visualization - Explore electron orbitals with quantum mechanical accuracy" />
+  <title>Plasma Kepler - Atomic Structure Visualizer</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+
+<body>
+  <div id="app">
+    <canvas id="viewer"></canvas>
+    <div id="ui-overlay">
+      <div id="element-info"></div>
+      <div id="periodic-table"></div>
+      <div id="orbital-legend"></div>
+      <div id="viz-controls"></div>
+    </div>
+    <div id="loading-screen">
+      <div class="loader"></div>
+      <p>Initializing Quantum Renderer...</p>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
