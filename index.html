@@ -4,26 +4,139 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta Tags -->
+  <title>Plasma Kepler - Interactive 3D Atomic Structure Visualizer</title>
+  <meta name="title" content="Plasma Kepler - Interactive 3D Atomic Structure Visualizer" />
   <meta name="description"
-    content="Interactive 3D Atomic Structure Visualization - Explore electron orbitals with quantum mechanical accuracy" />
-  <title>Plasma Kepler - Atomic Structure Visualizer</title>
+    content="Explore atomic structures in stunning 3D. Visualize electron orbitals, protons, and neutrons for all 118 elements with quantum mechanical accuracy. Free interactive periodic table tool for students and educators." />
+  <meta name="keywords"
+    content="atomic structure, electron orbitals, periodic table, chemistry visualization, 3D atom model, quantum mechanics, electron cloud, s p d f orbitals, protons neutrons, chemistry education, interactive periodic table, atomic number, electron configuration" />
+  <meta name="author" content="Plasma Kepler" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="7 days" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://plasma-kepler.netlify.app/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://plasma-kepler.netlify.app/" />
+  <meta property="og:title" content="Plasma Kepler - Interactive 3D Atomic Structure Visualizer" />
+  <meta property="og:description"
+    content="Explore atomic structures in stunning 3D. Visualize electron orbitals for all 118 elements with quantum mechanical accuracy." />
+  <meta property="og:image" content="https://plasma-kepler.netlify.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Plasma Kepler" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://plasma-kepler.netlify.app/" />
+  <meta name="twitter:title" content="Plasma Kepler - Interactive 3D Atomic Structure Visualizer" />
+  <meta name="twitter:description"
+    content="Explore atomic structures in stunning 3D. Visualize electron orbitals for all 118 elements with quantum mechanical accuracy." />
+  <meta name="twitter:image" content="https://plasma-kepler.netlify.app/og-image.png" />
+
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#0a0a0f" />
+  <meta name="msapplication-TileColor" content="#0a0a0f" />
+
+  <!-- Structured Data - WebApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Plasma Kepler",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "description": "Interactive 3D atomic structure visualizer. Explore electron orbitals for all 118 elements with quantum mechanical accuracy.",
+    "url": "https://plasma-kepler.netlify.app/",
+    "screenshot": "https://plasma-kepler.netlify.app/og-image.png",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "3D visualization of all 118 elements",
+      "Accurate electron orbital representations",
+      "Interactive periodic table",
+      "Proton and neutron visualization",
+      "Ionization state controls",
+      "Multiple view modes (Spheres, Cloud, Both)"
+    ],
+    "audience": {
+      "@type": "EducationalAudience",
+      "educationalRole": ["student", "teacher", "researcher"]
+    }
+  }
+  </script>
+
+  <!-- Structured Data - Educational Resource -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Plasma Kepler Atomic Visualizer",
+    "description": "Learn about atomic structure through interactive 3D visualization of electron orbitals and nuclear composition.",
+    "learningResourceType": "Interactive Simulation",
+    "educationalLevel": ["High School", "College", "University"],
+    "educationalUse": ["Self Study", "Classroom Demonstration"],
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Atomic Structure"
+      },
+      {
+        "@type": "Thing", 
+        "name": "Electron Orbitals"
+      },
+      {
+        "@type": "Thing",
+        "name": "Periodic Table"
+      }
+    ],
+    "inLanguage": "en",
+    "isAccessibleForFree": true
+  }
+  </script>
 </head>
 
 <body>
+  <!-- Main Application -->
   <div id="app">
-    <canvas id="viewer"></canvas>
+    <canvas id="viewer" aria-label="3D Atomic Structure Visualization"></canvas>
     <div id="ui-overlay">
-      <div id="element-info"></div>
-      <div id="periodic-table"></div>
-      <div id="orbital-legend"></div>
-      <div id="viz-controls"></div>
+      <div id="element-info" role="region" aria-label="Element Information"></div>
+      <div id="periodic-table" role="grid" aria-label="Periodic Table of Elements"></div>
+      <div id="orbital-legend" role="region" aria-label="Orbital Type Legend"></div>
+      <div id="viz-controls" role="region" aria-label="Visualization Controls"></div>
     </div>
-    <div id="loading-screen">
+    <div id="loading-screen" role="alert" aria-live="polite">
       <div class="loader"></div>
       <p>Initializing Quantum Renderer...</p>
     </div>
   </div>
+
+  <!-- Noscript fallback for SEO -->
+  <noscript>
+    <div style="padding: 2rem; text-align: center; font-family: sans-serif;">
+      <h1>Plasma Kepler - Atomic Structure Visualizer</h1>
+      <p>This interactive 3D atomic structure visualization tool requires JavaScript to run.</p>
+      <p>Explore electron orbitals, protons, and neutrons for all 118 elements of the periodic table.</p>
+      <p>Please enable JavaScript to use this application.</p>
+    </div>
+  </noscript>
+
   <script type="module" src="/src/main.js"></script>
 </body>
 
